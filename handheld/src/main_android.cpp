@@ -38,7 +38,7 @@ static void setupExternalPath(struct android_app* state, MAIN_CLASS* app)
     const char* str = env->GetStringUTFChars((jstring) pathString, NULL);
     app->externalStoragePath = str;
 	app->externalCacheStoragePath = str;
-    LOGI(str);
+    LOGI("%s", str);
 
     env->ReleaseStringUTFChars((jstring)pathString, str);
 
@@ -53,14 +53,14 @@ JNIEXPORT jint JNICALL
 		pthread_mutex_init(&g_activityMutex, 0);
 		pthread_mutex_lock(&g_activityMutex);
 
-		LOGI("Entering OnLoad %d\n", pthread_self());
+		LOGI("Entering OnLoad %ld\n", (long)pthread_self());
 		return appPlatform.init(vm);
 	}
 
 	// Register/save a reference to the java main activity instance
 	JNIEXPORT void JNICALL
 	Java_com_mojang_minecraftpe_MainActivity_nativeRegisterThis(JNIEnv* env, jobject clazz) {
-		LOGI("@RegisterThis %d\n", pthread_self());
+		LOGI("@RegisterThis %ld\n", (long)pthread_self());
 		g_pActivity = (jobject)env->NewGlobalRef( clazz );
 
 		pthread_mutex_unlock(&g_activityMutex);
@@ -69,7 +69,7 @@ JNIEXPORT jint JNICALL
 	// Unregister/delete the reference to the java main activity instance
 	JNIEXPORT void JNICALL
 	Java_com_mojang_minecraftpe_MainActivity_nativeUnregisterThis(JNIEnv* env, jobject clazz) {
-		LOGI("@UnregisterThis %d\n", pthread_self());
+		LOGI("@UnregisterThis %ld\n", (long)pthread_self());
 		env->DeleteGlobalRef( g_pActivity ); 
 		g_pActivity = 0;
 

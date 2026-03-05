@@ -1,0 +1,234 @@
+AUDIO_SET_AUDPROC_VOL_CAL
+03-05 21:22:29.719   240  2010 D ACDB-LOADER: ACDB -> send_afe_cal
+03-05 21:22:29.719   240  2010 D ACDB-LOADER: ACDB -> ACDB_CMD_GET_AFE_COMMON_TABLE
+03-05 21:22:29.719   240  2010 E ACDB-LOADER: Error: ACDB AFE returned = -8
+03-05 21:22:29.719   240  2010 D ACDB-LOADER: ACDB -> AUDIO_SET_AFE_CAL
+03-05 21:22:29.719   240  2010 D audio_route: Apply path: speaker
+03-05 21:22:29.722   501  1084 I system_server: oneway function results will be dropped but finished with status OK and parcel size 8
+03-05 21:22:29.723   240  2010 D audio_route: Apply path: low-latency-playback
+03-05 21:22:29.723   240  2010 D audio_hw_primary: select_devices: done
+01-01 03:06:31.319     0     0 I tapan_hw_params: dai_name = tapan_i2s_rx1 DAI-ID 0 rate 48000 num_ch 1
+01-01 03:06:31.329     0     0 E         : ACDB=> get_hw_delay Invalid delay/ delay entries
+01-01 03:06:31.329     0     0 E ACDB=> get_hw_delay: Path = 0 samplerate = 48000 usec = 2684354579 status -22
+01-01 03:06:31.333     0     0 I msm8930_mclk_event: event = 1
+03-05 21:22:29.744  1227  1287 E MediaProvider: Couldn't find file: /storage/emulated/0/games/com.mojang/minecraftWorlds/RwwAAHv-AAA=/level.dat
+03-05 21:22:29.752  1227  1732 E MediaProvider: Couldn't find file: /storage/emulated/0/games/com.mojang/minecraftWorlds/RwwAAHv-AAA=/level.dat_old
+03-05 21:22:29.842  1853  1874 I MinecraftPE: 41 fps
+03-05 21:22:29.892   272   292 D Sensors : LightSensor readEvents x = 39.000000, raw = 39
+03-05 21:22:29.967  1853  2008 D tom.minecraftp: PlayerBase::stop() from IPlayer
+03-05 21:22:29.968  1853  2008 D AudioTrack: stop(14): called with 12332 frames delivered
+03-05 21:22:30.095   501  1193 I system_server: oneway function results will be dropped but finished with status OK and parcel size 4
+03-05 21:22:30.096   278   340 W APM::AudioPolicyEngine: getDevicesForStrategy() unknown strategy: -1
+03-05 21:22:30.100   278   340 I chatty  : uid=1041(audioserver) ApmOutput identical 1 line
+03-05 21:22:30.101   278   340 W APM::AudioPolicyEngine: getDevicesForStrategy() unknown strategy: -1
+03-05 21:22:30.143   272   292 D Sensors : LightSensor readEvents x = 39.000000, raw = 39
+03-05 21:22:30.393   272   292 I chatty  : uid=1000(system) sensors@1.0-ser identical 1 line
+03-05 21:22:30.645   272   292 D Sensors : LightSensor readEvents x = 39.000000, raw = 39
+03-05 21:22:30.843  1853  1874 I MinecraftPE: 60 fps
+03-05 21:22:30.895   272   292 D Sensors : LightSensor readEvents x = 39.000000, raw = 39
+03-05 21:22:31.395   272   292 I chatty  : uid=1000(system) sensors@1.0-ser identical 2 lines
+03-05 21:22:31.653   272   292 D Sensors : LightSensor readEvents x = 39.000000, raw = 39
+03-05 21:22:31.843  1853  1874 I MinecraftPE: 60 fps
+03-05 21:22:31.910   272   292 D Sensors : LightSensor readEvents x = 39.000000, raw = 39
+03-05 21:22:32.163   272   292 D Sensors : LightSensor readEvents x = 39.000000, raw = 39
+03-05 21:22:32.241   276   536 E RIL-QMI : qmuxd: TX message on fd=22, to qmux_client_id=0x0, len=56
+03-05 21:22:32.247   276   276 E RIL-QMI : qmuxd: RX 47 bytes on fd=22 from qmux_client_id=0x0
+03-05 21:22:32.248   276   536 E RIL-QMI : qmuxd: TX message on fd=22, to qmux_client_id=0x0, len=68
+03-05 21:22:32.413   272   292 D Sensors : LightSensor readEvents x = 39.000000, raw = 39
+03-05 21:22:32.665   272   292 D Sensors : LightSensor readEvents x = 39.000000, raw = 39
+03-05 21:22:32.690   501  1193 I system_server: oneway function results will be dropped but finished with status OK and parcel size 4
+03-05 21:22:32.846  1853  1874 I MinecraftPE: 60 fps
+03-05 21:22:32.915   272   292 D Sensors : LightSensor readEvents x = 39.000000, raw = 39
+03-05 21:22:33.023   240   240 D audio_hw_primary: out_standby: enter: stream (0xaa0031f0) usecase(1: low-latency-playback)
+01-01 03:06:34.648     0     0 I msm8930_mclk_event: event = 8
+03-05 21:22:33.076   501  1193 I system_server: oneway function results will be dropped but finished with status OK and parcel size 4
+03-05 21:22:33.165   272   292 D Sensors : LightSensor readEvents x = 39.000000, raw = 39
+03-05 21:22:33.416   272   292 I chatty  : uid=1000(system) sensors@1.0-ser identical 1 line
+03-05 21:22:33.673   272   292 D Sensors : LightSensor readEvents x = 39.000000, raw = 39
+03-05 21:22:33.859  1853  1874 I MinecraftPE: 61 fps
+03-05 21:22:33.926   272   292 D Sensors : LightSensor readEvents x = 39.000000, raw = 39
+03-05 21:22:34.439   272   292 I chatty  : uid=1000(system) sensors@1.0-ser identical 2 lines
+03-05 21:22:34.694   272   292 D Sensors : LightSensor readEvents x = 39.000000, raw = 39
+03-05 21:22:34.794   276   536 E RIL-QMI : qmuxd: TX message on fd=22, to qmux_client_id=0x0, len=56
+03-05 21:22:34.796   276   276 E RIL-QMI : qmuxd: RX 47 bytes on fd=22 from qmux_client_id=0x0
+03-05 21:22:34.799   276   536 E RIL-QMI : qmuxd: TX message on fd=22, to qmux_client_id=0x0, len=68
+03-05 21:22:34.859  1853  1874 I MinecraftPE: 60 fps
+03-05 21:22:34.946   272   292 D Sensors : LightSensor readEvents x = 39.000000, raw = 39
+01-01 03:06:36.605     0     0 I         : Atmel MXT336S 3-004a: [P][0]: T[0][0]
+03-05 21:22:35.017   270   270 D PowerHAL: power_hint: no power profile selected yet
+03-05 21:22:35.017   270   270 D PowerHAL: power_hint: no power profile selected yet
+03-05 21:22:35.042  1853  1874 V MinecraftPE: New input event: type=2
+01-01 03:06:36.663     0     0 I         : Atmel MXT336S 3-004a: [R][0]: T[0][0] M[0]
+01-01 03:06:36.749     0     0 I msm8930_i2s_enable: clk_set_rate rx_osr rtn = 0, rate = 23040000
+03-05 21:22:35.065  1853  1874 I chatty  : uid=10184(com.custom.minecraftpe) Thread-44 identical 1 line
+03-05 21:22:35.080  1853  1874 V MinecraftPE: New input event: type=2
+03-05 21:22:35.127  1853  1874 D tom.minecraftp: PlayerBase::PlayerBase()
+03-05 21:22:35.128  1853  1874 D tom.minecraftp: TrackPlayerBase::TrackPlayerBase()
+03-05 21:22:35.128  1853  1874 I libOpenSLES: Emulating old channel mask behavior (ignoring positional mask 0x3, using default mask 0x3 based on channel count of 2)
+03-05 21:22:35.131   240   240 D audio_hw_extn: audio_extn_get_parameters: returns
+03-05 21:22:35.132   278   854 I hash_map_utils: key: 'vr_audio_mode_on' value: ''
+03-05 21:22:35.134   278   854 W AudioFlinger: createTrack_l(): mismatch between requested flags (00000104) and output flags (00000004)
+03-05 21:22:35.136   278   854 D AudioFlinger: Client defaulted notificationFrames to 882 for frameCount 1772
+03-05 21:22:35.139   278   854 D AF::TrackHandle: OpPlayAudio: track:56 usage:1 not muted
+03-05 21:22:35.143  1853  1874 D AudioTrack: createTrack_l(14): AUDIO_OUTPUT_FLAG_FAST denied by server; frameCount 0 -> 1772
+01-01 03:06:36.754     0     0 I tapan_hw_params: dai_name = tapan_i2s_rx1 DAI-ID 0 rate 48000 num_ch 1
+03-05 21:22:35.145  1853  1874 I MinecraftPE: min: -32768, max: 0, current: 0 (1.000000)
+03-05 21:22:35.148   278   854 W APM::AudioPolicyEngine: getDevicesForStrategy() unknown strategy: -1
+01-01 03:06:36.763     0     0 E         : ACDB=> get_hw_delay Invalid delay/ delay entries
+03-05 21:22:35.148   278   854 W APM::AudioPolicyEngine: getDevicesForStrategy() unknown strategy: -1
+03-05 21:22:35.150   240  2010 D audio_hw_primary: start_output_stream: enter: stream(0xaa0031f0)usecase(1: low-latency-playback) devices(0x2)
+01-01 03:06:36.763     0     0 E ACDB=> get_hw_delay: Path = 0 samplerate = 48000 usec = 2684354579 status -22
+03-05 21:22:35.150   240  2010 D audio_hw_primary: select_devices: out_snd_device(2: speaker) in_snd_device(0: )
+03-05 21:22:35.150   240  2010 I msm8960_platform: platform_send_audio_calibration: sending audio calibration for snd_device(2) acdb_id(15)
+03-05 21:22:35.150   240  2010 D ACDB-LOADER: ACDB -> send_audio_cal, acdb_id = 15, path =  0
+03-05 21:22:35.150   240  2010 D ACDB-LOADER: ACDB -> send_adm_topology
+03-05 21:22:35.150   240  2010 D ACDB-LOADER: ACDB -> ACDB_CMD_GET_AUDPROC_COMMON_TOPOLOGY_ID
+03-05 21:22:35.150   240  2010 D ACDB-LOADER: ACDB -> send_audtable
+03-05 21:22:35.150   240  2010 D ACDB-LOADER: ACDB -> ACDB_CMD_GET_AUDPROC_COMMON_TABLE
+03-05 21:22:35.150   240  2010 D ACDB-LOADER: ACDB -> AUDIO_SET_AUDPROC_CAL
+03-05 21:22:35.150   240  2010 D ACDB-LOADER: ACDB -> send_audvoltable
+03-05 21:22:35.150   240  2010 D ACDB-LOADER: ACDB -> ACDB_CMD_GET_AUDPROC_GAIN_DEP_VOLTBL_STEP_COPP
+03-05 21:22:35.151   240  2010 E ACDB-LOADER: Error: ACDB AudProc vol returned = -8
+03-05 21:22:35.151   240  2010 D ACDB-LOADER: ACDB -> AUDIO_SET_AUDPROC_VOL_CAL
+03-05 21:22:35.151   240  2010 D ACDB-LOADER: ACDB -> send_afe_cal
+03-05 21:22:35.151   240  2010 D ACDB-LOADER: ACDB -> ACDB_CMD_GET_AFE_COMMON_TABLE
+01-01 03:06:36.767     0     0 I msm8930_mclk_event: event = 1
+03-05 21:22:35.151   240  2010 E ACDB-LOADER: Error: ACDB AFE returned = -8
+03-05 21:22:35.151   240  2010 D ACDB-LOADER: ACDB -> AUDIO_SET_AFE_CAL
+03-05 21:22:35.151   240  2010 D audio_route: Apply path: speaker
+03-05 21:22:35.158   240  2010 D audio_route: Apply path: low-latency-playback
+03-05 21:22:35.158   240  2010 D audio_hw_primary: select_devices: done
+03-05 21:22:35.159   501  1084 I system_server: oneway function results will be dropped but finished with status OK and parcel size 4
+03-05 21:22:35.160   501  1193 I system_server: oneway function results will be dropped but finished with status OK and parcel size 4
+03-05 21:22:35.195   272   292 D Sensors : LightSensor readEvents x = 39.000000, raw = 39
+03-05 21:22:35.250  1853  1853 I System.out: Mode: 0, view? false
+03-05 21:22:35.427  1853  2013 D tom.minecraftp: PlayerBase::stop() from IPlayer
+03-05 21:22:35.427  1853  2013 D AudioTrack: stop(15): called with 12332 frames delivered
+03-05 21:22:35.445   272   292 D Sensors : LightSensor readEvents x = 39.000000, raw = 39
+03-05 21:22:35.462  1853  1853 I System.out: Mode: 0, view? true
+03-05 21:22:35.549   278   340 W APM::AudioPolicyEngine: getDevicesForStrategy() unknown strategy: -1
+03-05 21:22:35.550   278   340 I chatty  : uid=1041(audioserver) ApmOutput identical 1 line
+03-05 21:22:35.550   278   340 W APM::AudioPolicyEngine: getDevicesForStrategy() unknown strategy: -1
+03-05 21:22:35.554   501  1084 I system_server: oneway function results will be dropped but finished with status OK and parcel size 4
+03-05 21:22:35.627  1853  1870 W Adreno-EGL: <qeglDrvAPI_eglGetConfigAttrib:607>: EGL_BAD_ATTRIBUTE
+03-05 21:22:35.640  1853  1870 W Adreno-EGL: <qeglDrvAPI_eglGetConfigAttrib:607>: EGL_BAD_ATTRIBUTE
+03-05 21:22:35.695   272   292 D Sensors : LightSensor readEvents x = 39.000000, raw = 39
+03-05 21:22:35.871  1853  1874 I MinecraftPE: 58 fps
+03-05 21:22:35.945   272   292 D Sensors : LightSensor readEvents x = 39.000000, raw = 39
+03-05 21:22:35.963  1853  1853 I Choreographer: Skipped 30 frames!  The application may be doing too much work on its main thread.
+03-05 21:22:35.986   270   270 D PowerHAL: power_hint: no power profile selected yet
+03-05 21:22:35.986   270   270 D PowerHAL: power_hint: no power profile selected yet
+03-05 21:22:36.078   276   536 E RIL-QMI : qmuxd: TX message on fd=22, to qmux_client_id=0x0, len=56
+03-05 21:22:36.079   276   276 E RIL-QMI : qmuxd: RX 47 bytes on fd=22 from qmux_client_id=0x0
+03-05 21:22:36.080   276   536 E RIL-QMI : qmuxd: TX message on fd=22, to qmux_client_id=0x0, len=68
+03-05 21:22:36.141   276   536 E RIL-QMI : qmuxd: TX message on fd=22, to qmux_client_id=0x0, len=113
+03-05 21:22:36.174   276   276 E RIL-QMI : qmuxd: RX 47 bytes on fd=22 from qmux_client_id=0x0
+03-05 21:22:36.179   276   536 E RIL-QMI : qmuxd: TX message on fd=22, to qmux_client_id=0x0, len=120
+03-05 21:22:36.184   276   276 E RIL-QMI : qmuxd: RX 47 bytes on fd=22 from qmux_client_id=0x0
+03-05 21:22:36.190   276   536 E RIL-QMI : qmuxd: TX message on fd=22, to qmux_client_id=0x0, len=120
+03-05 21:22:36.196   272   292 D Sensors : LightSensor readEvents x = 39.000000, raw = 39
+03-05 21:22:36.447   272   292 I chatty  : uid=1000(system) sensors@1.0-ser identical 1 line
+03-05 21:22:36.696   272   292 D Sensors : LightSensor readEvents x = 39.000000, raw = 39
+03-05 21:22:36.874  1853  1874 I MinecraftPE: 59 fps
+03-05 21:22:36.945   272   292 D Sensors : LightSensor readEvents x = 39.000000, raw = 39
+03-05 21:22:36.976   270   270 D PowerHAL: power_hint: no power profile selected yet
+01-01 03:06:38.565     0     0 I         : Atmel MXT336S 3-004a: [P][0]: T[0][0]
+01-01 03:06:38.668     0     0 I         : Atmel MXT336S 3-004a: [R][0]: T[0][0] M[0]
+03-05 21:22:37.155   270   270 I chatty  : uid=1000(system) power@1.1-servi identical 4 lines
+03-05 21:22:37.155   270   270 D PowerHAL: power_hint: no power profile selected yet
+03-05 21:22:37.165  1853  1853 I System.out: js: Unnamed world
+03-05 21:22:37.166  1853  1853 I System.out: js:
+03-05 21:22:37.166  1853  1853 I System.out: js: creative
+03-05 21:22:37.167  1853  1853 D AndroidRuntime: Shutting down VM
+03-05 21:22:37.169  1853  1874 I MinecraftPE: Creating a level with id 'Unnamed world', name 'Unnamed world' and seed '1772738557'
+03-05 21:22:37.178  1853  1874 I MinecraftPE: Created folder /storage/emulated/0/games/com.mojang/minecraftWorlds/Unnamed world
+--------- beginning of crash
+03-05 21:22:37.179  1853  1853 E AndroidRuntime: FATAL EXCEPTION: main
+03-05 21:22:37.179  1853  1853 E AndroidRuntime: Process: com.custom.minecraftpe, PID: 1853
+03-05 21:22:37.179  1853  1853 E AndroidRuntime: java.lang.NullPointerException: Attempt to invoke virtual method 'android.os.IBinder android.view.View.getWindowToken()' on a null object reference
+03-05 21:22:37.179  1853  1853 E AndroidRuntime:        at android.view.inputmethod.InputMethodManager.showSoftInput(InputMethodManager.java:1668)
+03-05 21:22:37.179  1853  1853 E AndroidRuntime:        at android.view.inputmethod.InputMethodManager.showSoftInput(InputMethodManager.java:1592)
+03-05 21:22:37.179  1853  1853 E AndroidRuntime:        at com.mojang.minecraftpe.MainActivity.onDialogCompleted(MainActivity.java:471)
+03-05 21:22:37.179  1853  1853 E AndroidRuntime:        at com.mojang.minecraftpe.MainActivity.access$100(MainActivity.java:54)
+03-05 21:22:37.179  1853  1853 E AndroidRuntime:        at com.mojang.minecraftpe.MainActivity$5$1.onClick(MainActivity.java:333)
+03-05 21:22:37.179  1853  1853 E AndroidRuntime:        at android.view.View.performClick(View.java:7455)
+03-05 21:22:37.179  1853  1853 E AndroidRuntime:        at android.view.View.performClickInternal(View.java:7432)
+03-05 21:22:37.179  1853  1853 E AndroidRuntime:        at android.view.View.access$3600(View.java:810)
+03-05 21:22:37.179  1853  1853 E AndroidRuntime:        at android.view.View$PerformClick.run(View.java:28313)
+03-05 21:22:37.179  1853  1853 E AndroidRuntime:        at android.os.Handler.handleCallback(Handler.java:938)
+03-05 21:22:37.179  1853  1853 E AndroidRuntime:        at android.os.Handler.dispatchMessage(Handler.java:99)
+03-05 21:22:37.179  1853  1853 E AndroidRuntime:        at android.os.Looper.loop(Looper.java:223)
+03-05 21:22:37.179  1853  1853 E AndroidRuntime:        at android.app.ActivityThread.main(ActivityThread.java:7669)
+03-05 21:22:37.179  1853  1853 E AndroidRuntime:        at java.lang.reflect.Method.invoke(Native Method)
+03-05 21:22:37.179  1853  1853 E AndroidRuntime:        at com.android.internal.os.RuntimeInit$MethodAndArgsCaller.run(RuntimeInit.java:592)
+03-05 21:22:37.179  1853  1853 E AndroidRuntime:        at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:947)
+03-05 21:22:37.191   501  1084 W ActivityTaskManager:   Force finishing activity com.custom.minecraftpe/com.mojang.minecraftpe.MainActivity
+03-05 21:22:37.192  1853  1874 I MinecraftPE: random.get : 1850822240
+03-05 21:22:37.193  1853  1874 I MinecraftPE: Seed is 1772738557
+03-05 21:22:37.195   272   292 D Sensors : LightSensor readEvents x = 39.000000, raw = 39
+03-05 21:22:37.200   501  2030 I DropBoxManagerService: add tag=data_app_crash isTagEnabled=true flags=0x2
+03-05 21:22:37.209  1853  2031 I MinecraftPE: status: 1
+03-05 21:22:37.233  1853  1853 I Process : Sending signal. PID: 1853 SIG: 9
+03-05 21:22:37.259  1227  1732 W MediaProvider: Forgot to handle a top level directory in getContentUriForFile?
+03-05 21:22:37.271  1227  1732 E MediaProvider: insertFileIfNecessary failed
+03-05 21:22:37.271  1227  1732 E MediaProvider: java.lang.IllegalArgumentException: Primary directory games not allowed for content://media/external_primary/file; allowed directories are [Download, Documents]
+03-05 21:22:37.271  1227  1732 E MediaProvider:         at com.android.providers.media.MediaProvider.ensureFileColumns(MediaProvider.java:2707)
+03-05 21:22:37.271  1227  1732 E MediaProvider:         at com.android.providers.media.MediaProvider.ensureUniqueFileColumns(MediaProvider.java:2372)
+03-05 21:22:37.271  1227  1732 E MediaProvider:         at com.android.providers.media.MediaProvider.insertFile(MediaProvider.java:2982)
+03-05 21:22:37.271  1227  1732 E MediaProvider:         at com.android.providers.media.MediaProvider.insertInternal(MediaProvider.java:3521)
+03-05 21:22:37.271  1227  1732 E MediaProvider:         at com.android.providers.media.MediaProvider.insert(MediaProvider.java:3237)
+03-05 21:22:37.271  1227  1732 E MediaProvider:         at com.android.providers.media.MediaProvider.insertFileForFuse(MediaProvider.java:6705)
+03-05 21:22:37.271  1227  1732 E MediaProvider:         at com.android.providers.media.MediaProvider.insertFileIfNecessaryForFuse(MediaProvider.java:6792)
+03-05 21:22:37.309   501  1084 I WindowManager: WIN DEATH: Window{190fa7a u0 com.custom.minecraftpe/com.mojang.minecraftpe.MainActivity}
+03-05 21:22:37.313   501  1195 I ActivityManager: Process com.custom.minecraftpe (pid 1853) has died: fg  TOP
+03-05 21:22:37.317   501  1996 I WindowManager: WIN DEATH: Window{67bf3e2 u0 com.custom.minecraftpe/com.mojang.minecraftpe.MainActivity EXITING}
+03-05 21:22:37.336   234   234 I Zygote  : Process 1853 exited due to signal 9 (Killed)
+03-05 21:22:37.354   270   270 D PowerHAL: power_hint: no power profile selected yet
+03-05 21:22:37.355   270   270 D PowerHAL: power_hint: no power profile selected yet
+03-05 21:22:37.357   501   527 I libprocessgroup: Successfully killed process cgroup uid 10184 pid 1853 in 43ms
+03-05 21:22:37.402   501   519 W ActivityManager: setHasOverlayUi called on unknown pid: 1853
+03-05 21:22:37.403   501  2035 W ActivityManager: Unable to start service Intent { act=com.android.launcher3.WINDOW_OVERLAY dat=app://com.android.launcher3:10174?v=9&cv=14 pkg=com.google.android.googlequicksearchbox } U=0: not found
+03-05 21:22:37.430   963  1260 W Adreno-EGL: <qeglDrvAPI_eglGetConfigAttrib:607>: EGL_BAD_ATTRIBUTE
+03-05 21:22:37.447   272   292 D Sensors : LightSensor readEvents x = 39.000000, raw = 39
+03-05 21:22:37.482   501  1996 W ActivityManager: Unable to start service Intent { act=android.service.appprediction.AppPredictionService cmp=com.google.android.as/com.google.android.apps.miphone.aiai.app.AiAiPredictionService } U=0: not found
+03-05 21:22:37.482   501  1996 W RemoteAppPredictionService: could not bind to Intent { act=android.service.appprediction.AppPredictionService cmp=com.google.android.as/com.google.android.apps.miphone.aiai.app.AiAiPredictionService } using flags 67108865
+03-05 21:22:37.492   501   520 V WindowManager: Orientation start waiting for draw, mDrawState=DRAW_PENDING in Window{2ee5de0 u0 com.android.systemui.ImageWallpaper}, surfaceController Surface(name=com.android.systemui.ImageWallpaper)/@0x2cc3f75
+03-05 21:22:37.505   270   270 D PowerHAL: power_hint: no power profile selected yet
+03-05 21:22:37.532   963  1260 W Adreno-EGL: <qeglDrvAPI_eglGetConfigAttrib:607>: EGL_BAD_ATTRIBUTE
+03-05 21:22:37.549   665   927 D EglHelper: createEglContext start
+03-05 21:22:37.560   665   927 D EglHelper: createEglContext done
+03-05 21:22:37.578   665   927 D EglHelper: createEglSurface start
+03-05 21:22:37.578   665   927 W Adreno-EGL: <qeglDrvAPI_eglGetConfigAttrib:607>: EGL_BAD_ATTRIBUTE
+01-01 03:06:39.186     0     0 I binder  : 1385:1385 transaction failed 29189/-22, size 96-0 line 3104
+03-05 21:22:37.612   665   927 D EglHelper: createEglSurface done
+03-05 21:22:37.645   501   519 I ActivityTaskManager: Config changes=20000480 {1.0 ?mcc?mnc [en_GB] ldltr sw360dp w360dp h600dp 240dpi nrml long port finger -keyb/v/h -nav/h winConfig={ mBounds=Rect(0, 0 - 540, 960) mAppBounds=Rect(0, 0 - 540, 936) mWindowingMode=fullscreen mDisplayWindowingMode=fullscreen mActivityType=undefined mAlwaysOnTop=undefined mRotation=ROTATION_0} s.148}
+03-05 21:22:37.708   272   292 D Sensors : LightSensor readEvents x = 39.000000, raw = 39
+03-05 21:22:37.761   501   519 I WindowManager: Override config changes=20000480 {1.0 ?mcc?mnc [en_GB] ldltr sw360dp w360dp h600dp 240dpi nrml long port finger -keyb/v/h -nav/h winConfig={ mBounds=Rect(0, 0 - 540, 960) mAppBounds=Rect(0, 0 - 540, 936) mWindowingMode=fullscreen mDisplayWindowingMode=fullscreen mActivityType=undefined mAlwaysOnTop=undefined mRotation=ROTATION_0} s.148} for displayId=0
+03-05 21:22:37.809   501   519 V WindowManager: Orientation start waiting for draw, mDrawState=DRAW_PENDING in Window{b837e6b u0 ScreenDecorOverlayBottom}, surfaceController Surface(name=ScreenDecorOverlayBottom)/@0xbfe08f8
+03-05 21:22:37.810   501   519 V WindowManager: Orientation start waiting for draw, mDrawState=DRAW_PENDING in Window{4bfcebd u0 ScreenDecorOverlay}, surfaceController Surface(name=ScreenDecorOverlay)/@0xf628c12
+03-05 21:22:37.866   963  1260 W Adreno-EGL: <qeglDrvAPI_eglGetConfigAttrib:607>: EGL_BAD_ATTRIBUTE
+03-05 21:22:37.897   501   519 W ActivityTaskManager: Activity top resumed state loss timeout for ActivityRecord{79f8a62 u0 com.custom.minecraftpe/com.mojang.minecraftpe.MainActivity t-1 f}}
+03-05 21:22:37.910   501   519 I InputManager-JNI: Viewport [0] to add: local:0, isActive: true
+03-05 21:22:37.912   501   585 I InputReader: Reconfiguring input devices, changes=DISPLAY_INFO |
+03-05 21:22:37.912   501   585 I InputReader: Device reconfigured: id=2, name='sec_touchscreen', size 540x960, orientation 0, mode 1, display id 0
+03-05 21:22:37.916   665  1057 W Adreno-EGL: <qeglDrvAPI_eglGetConfigAttrib:607>: EGL_BAD_ATTRIBUTE
+03-05 21:22:37.956   665  1057 W Adreno-EGL: <qeglDrvAPI_eglGetConfigAttrib:607>: EGL_BAD_ATTRIBUTE
+03-05 21:22:37.959   272   292 D Sensors : LightSensor readEvents x = 39.000000, raw = 39
+03-05 21:22:38.000   665  1057 W Adreno-EGL: <qeglDrvAPI_eglGetConfigAttrib:607>: EGL_BAD_ATTRIBUTE
+01-01 03:06:39.660     0     0 I init    : starting service 'idmap2d'...
+01-01 03:06:39.672     0     0 I init    : Control message: Processed ctl.start for 'idmap2d' from pid: 501 (system_server)
+03-05 21:22:38.161   665  1057 W Adreno-EGL: <qeglDrvAPI_eglGetConfigAttrib:607>: EGL_BAD_ATTRIBUTE
+03-05 21:22:38.208   272   292 D Sensors : LightSensor readEvents x = 39.000000, raw = 39
+03-05 21:22:38.329   665  1057 W Adreno-EGL: <qeglDrvAPI_eglGetConfigAttrib:607>: EGL_BAD_ATTRIBUTE
+03-05 21:22:38.370   270   270 D PowerHAL: power_hint: no power profile selected yet
+03-05 21:22:38.370   270   270 D PowerHAL: power_hint: no power profile selected yet
+03-05 21:22:38.381   665  1057 W Adreno-EGL: <qeglDrvAPI_eglGetConfigAttrib:607>: EGL_BAD_ATTRIBUTE
+03-05 21:22:38.457   665   670 I ndroid.systemu: NativeAlloc concurrent copying GC freed 71121(2003KB) AllocSpace objects, 4(80KB) LOS objects, 40% free, 17MB/29MB, paused 122us total 1.219s
+03-05 21:22:38.458   272   292 D Sensors : LightSensor readEvents x = 33.000000, raw = 33
+03-05 21:22:38.480   240   240 D audio_hw_primary: out_standby: enter: stream (0xaa0031f0) usecase(1: low-latency-playback)
+01-01 03:06:40.099     0     0 I msm8930_mclk_event: event = 8
+03-05 21:22:38.517   501  2035 I system_server: oneway function results will be dropped but finished with status OK and parcel size 4
+03-05 21:22:38.708   272   292 D Sensors : LightSensor readEvents x = 39.000000, raw = 39
+03-05 21:22:38.959   272   292 D Sensors : LightSensor readEvents x = 36.000000, raw = 36
+03-05 21:22:39.209   272   292 D Sensors : LightSensor readEvents x = 36.000000, raw = 36
+03-05 21:22:39.460   272   292 D Sensors : LightSensor readEvents x = 30.000000, raw = 30

@@ -35,3 +35,5 @@
 /Release
 *.db
 *.opendb
+/.gradle
+/build
