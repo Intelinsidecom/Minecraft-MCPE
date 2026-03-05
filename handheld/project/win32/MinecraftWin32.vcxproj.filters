@@ -198,9 +198,6 @@
     <Filter Include="Source Files\client\gui\screens\crafting">
       <UniqueIdentifier>{d9a5faa2-fae5-4072-950e-89ca5a5f86fd}</UniqueIdentifier>
     </Filter>
-    <Filter Include="DLLs">
-      <UniqueIdentifier>{4e451a9e-a692-49c3-b297-2a3fbf023009}</UniqueIdentifier>
-    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\src\main.cpp">
@@ -3190,31 +3187,5 @@
     <ClInclude Include="..\..\src\client\gui\components\Slider.h">
       <Filter>Source Files\client\gui\components</Filter>
     </ClInclude>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="..\..\lib\bin\glew32.dll">
-      <Filter>DLLs</Filter>
-    </None>
-    <None Include="..\..\lib\bin\libEGL.dll">
-      <Filter>DLLs</Filter>
-    </None>
-    <None Include="..\..\lib\bin\libgles_cm.dll">
-      <Filter>DLLs</Filter>
-    </None>
-    <None Include="..\..\lib\bin\libpng3.dll">
-      <Filter>DLLs</Filter>
-    </None>
-    <None Include="..\..\lib\bin\libpng12.dll">
-      <Filter>DLLs</Filter>
-    </None>
-    <None Include="..\..\lib\bin\zlib1.dll">
-      <Filter>DLLs</Filter>
-    </None>
-    <None Include="..\..\lib\bin\vld_win32\dbghelp.dll">
-      <Filter>DLLs</Filter>
-    </None>
-    <None Include="..\..\lib\bin\vld_win32\vld_x86.dll">
-      <Filter>DLLs</Filter>
-    </None>
   </ItemGroup>
 </Project>
