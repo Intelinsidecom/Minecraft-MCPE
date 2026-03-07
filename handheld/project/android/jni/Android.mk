@@ -246,6 +246,7 @@ LOCAL_SRC_FILES := ../../../src/main.cpp \
 ../../../src/world/phys/HitResult.cpp
 
 LOCAL_CFLAGS := -Wno-psabi $(LOCAL_CFLAGS)
+LOCAL_CFLAGS += -isystem $(SYSROOT)/usr/include
 
 #LOCAL_CFLAGS := -DANDROID_PUBLISH -DDEMO_MODE $(LOCAL_CFLAGS)
 #LOCAL_CFLAGS := -DANDROID_PUBLISH $(LOCAL_CFLAGS)

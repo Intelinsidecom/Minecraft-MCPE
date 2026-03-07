@@ -44,6 +44,7 @@ void resizeWindow(HWND hWnd, int nWidth, int nHeight) {
    MoveWindow(hWnd,rcWindow.left, rcWindow.top, nWidth + ptDiff.x, nHeight + ptDiff.y, TRUE);
 }
 
+
 void toggleResolutions(HWND hwnd, int direction) {
 	static int n = 0;
 	static int sizes[][3] = {
@@ -335,5 +336,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE, LPSTR, int nCmdShow) {
 
 	return 0;
 }
+
+
 
 #endif /*MAIN_WIN32_H__*/

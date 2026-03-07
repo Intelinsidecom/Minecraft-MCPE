@@ -191,15 +191,25 @@ public:
     // @note: This is called after instance is set, BUT this will
     //        be rewritten later on anyway
     int initConsts() {
+        if (!instance) {
+            LOGI("AppPlatform_android::initConsts - Instance is NULL, skipping initialization");
+            return -1;
+        }
 
         JVMAttacher ta(_vm);
         JNIEnv* env = ta.getEnv();
+
+        if (!env) {
+            LOGI("AppPlatform_android::initConsts - JNIEnv is NULL");
+            return -2;
+        }
 
         jmethodID fWidth = env->GetMethodID( _activityClass, "getScreenWidth", "()I");
         jmethodID fHeight = env->GetMethodID( _activityClass, "getScreenHeight", "()I");
 
         _screenWidth = env->CallIntMethod(instance, fWidth);
         _screenHeight = env->CallIntMethod(instance, fHeight);
+        return 0;
     }
 
     void tick() {
@@ -518,7 +528,7 @@ public:
         JVMAttacher ta(_vm);
         JNIEnv* env = ta.getEnv();
 
-        return env->CallBooleanMethod(instance, _methodSupportsTouchscreen);
+        return JNI_TRUE == env->CallBooleanMethod(instance, _methodSupportsTouchscreen);
     }
 
 	virtual void vibrate(int milliSeconds) {

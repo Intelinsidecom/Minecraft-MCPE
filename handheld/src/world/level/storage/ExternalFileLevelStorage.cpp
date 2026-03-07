@@ -85,7 +85,9 @@ ExternalFileLevelStorage::ExternalFileLevelStorage(const std::string& levelId, c
 	level(NULL),
 	loadedStorageVersion(SharedConstants::StorageVersion)
 {
-	createFolderIfNotExists(levelPath.c_str());
+	if (!createFolderIfNotExists(levelPath.c_str())) {
+		LOGI("Failed to create world directory: %s\n", levelPath.c_str());
+	}
 
 	std::string datFileName   = levelPath + "/" + fnLevelDat;
 	std::string levelFileName = levelPath + "/" + fnPlayerDat;

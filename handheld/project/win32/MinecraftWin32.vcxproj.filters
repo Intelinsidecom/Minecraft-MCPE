@@ -3195,7 +3195,7 @@
     </ResourceCompile>
   </ItemGroup>
   <ItemGroup>
-    <Image Include="icon1.ico">
+    <Image Include="MinecraftIcon.ico">
       <Filter>Resource Files</Filter>
     </Image>
   </ItemGroup>

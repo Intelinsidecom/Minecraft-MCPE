@@ -421,48 +421,6 @@ static
 int32_t
 handle_touch_input( struct android_app* app, AInputEvent* event )
 {
-    if( AInputEvent_getType(event) != AINPUT_EVENT_TYPE_MOTION )
-        return 0;
-
-    int nSourceId   = AInputEvent_getSource( event );
-	if (nSourceId == AINPUT_SOURCE_TOUCHPAD)
-		return 0;
-
-    struct ENGINE* engine = (struct ENGINE*)app->userData;
-
-    int fullAction  = AMotionEvent_getAction( event );
-    int nAction     = AMOTION_EVENT_ACTION_MASK & fullAction;
-    int pointerIndex = (fullAction & AMOTION_EVENT_ACTION_POINTER_INDEX_MASK) >> AMOTION_EVENT_ACTION_POINTER_INDEX_SHIFT;
-    int pointerId = AMotionEvent_getPointerId(event, pointerIndex);
-    int x = (int)AMotionEvent_getX(event, pointerIndex);
-    int y = (int)AMotionEvent_getY(event, pointerIndex);
-
-	//LOGI("xy:\t%d, %d\n", x, y);
-
-    switch (nAction) {
-        case AMOTION_EVENT_ACTION_POINTER_DOWN:
-        case AMOTION_EVENT_ACTION_DOWN:
-            mouseDown(1, x, y);
-            Multitouch::feed(1, 1, x, y, pointerId);
-            break;
-        case AMOTION_EVENT_ACTION_POINTER_UP:
-        case AMOTION_EVENT_ACTION_UP:
-            mouseUp(1, x, y);
-            Multitouch::feed(1, 0, x, y, pointerId);
-            break;
-        case AMOTION_EVENT_ACTION_MOVE:
-    		int pcount = AMotionEvent_getPointerCount(event);
-    		for (int i = 0; i < pcount; ++i) {
-    			int pp = AMotionEvent_getPointerId(event, i); // @attn wtf?
-    			float xx = AMotionEvent_getX(event, i);
-    			float yy = AMotionEvent_getY(event, i);
-        		//	System.err.println("   " + p + " @ " + x + ", " + y);
-                //LOGI("> %.2f, %.2f\n", xx, yy);
-                mouseMove(xx, yy);
-                Multitouch::feed(0, 0, xx, yy, pp);
-    		}
-            break;
-    }
     return 0;
 }
 

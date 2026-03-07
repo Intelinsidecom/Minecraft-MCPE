@@ -1,5 +1,10 @@
 #include "RegionFile.h"
 #include "../../../platform/log.h"
+#include "FolderMethods.h"
+
+#ifndef WIN32
+#include <errno.h>
+#endif
 
 const int SECTOR_BYTES = 4096;
 const int SECTOR_INTS = SECTOR_BYTES / 4;
@@ -68,10 +73,18 @@ bool RegionFile::open()
 	else
 	{
 		// new world
+		std::string parentDir = filename.substr(0, filename.find_last_of("/\\"));
+		if (!parentDir.empty()) {
+			if (!createFolderIfNotExists(parentDir.c_str())) {
+				LOGI("Failed to create parent directory for chunk file %s\n", filename.c_str());
+				return false;
+			}
+		}
+		
 		file = fopen(filename.c_str(), "w+b");
 		if (!file)
 		{
-			LOGI("Failed to create chunk file %s\n", filename.c_str());
+			LOGI("Failed to create chunk file %s (errno: %d)\n", filename.c_str(), errno);
 			return false;
 		}
 

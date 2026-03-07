@@ -9,6 +9,14 @@
 #include <cmath>
 #include <fstream>
 #include <sstream>
+#include <windows.h>
+
+bool static folderExists(const std::string& path)
+{
+	DWORD attribs = GetFileAttributesA(path.c_str());
+	return (attribs != INVALID_FILE_ATTRIBUTES &&
+		(attribs & FILE_ATTRIBUTE_DIRECTORY));
+}
 
 static void png_funcReadFile(png_structp pngPtr, png_bytep data, png_size_t length) {
 	((std::istream*)png_get_io_ptr(pngPtr))->read((char*)data, length);
@@ -22,9 +30,18 @@ public:
     }
 
 	BinaryBlob readAssetFile(const std::string& filename) {
-		FILE* fp = fopen(("../../data/" + filename).c_str(), "r");
-		if (!fp)
+		FILE* fp = NULL;
+
+		if (folderExists("/data")) {
+			fp = fopen(("/data/" + filename).c_str(), "rb");
+		}
+		else if (folderExists("../../data")) {
+			fp = fopen(("../../data/" + filename).c_str(), "rb");
+		}
+
+		if (!fp) {
 			return BinaryBlob();
+		}
 
 		int size = getRemainingFileSize(fp);
 

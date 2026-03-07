@@ -29,8 +29,9 @@
 		mp_threadFunc = (pthread_fn)threadFunc;
 
 		pthread_attr_init(&m_attributes);
-		pthread_attr_setdetachstate( &m_attributes, PTHREAD_CREATE_DETACHED );
-		/*int error =*/ pthread_create(&m_thread, &m_attributes, mp_threadFunc,threadParam);
+		// Fix: Remove detached state to allow joining in destructor
+		// pthread_attr_setdetachstate( &m_attributes, PTHREAD_CREATE_DETACHED );
+		pthread_create(&m_thread, &m_attributes, mp_threadFunc,threadParam);
 	#endif
 	#ifdef MACOSX
 		mp_threadFunc = (TaskProc) threadFunc;

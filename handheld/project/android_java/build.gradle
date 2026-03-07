@@ -1,0 +1,74 @@
+buildscript {
+    repositories {
+        maven {
+            url 'https://maven.google.com'
+        }
+        maven {
+            url 'https://dl.google.com/dl/android/maven2/'
+        }
+        maven {
+            url 'https://plugins.gradle.org/m2/'
+        }
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:3.3.2'
+    }
+}
+
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 9
+    buildToolsVersion "19.1.0"
+
+    defaultConfig {
+        applicationId "com.custom.minecraftpe"
+        minSdkVersion 9
+        targetSdkVersion 30
+        versionCode 1
+        versionName "0.6.1"
+        
+        ndk {
+            abiFilters 'armeabi-v7a'
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard.cfg'
+        }
+        debug {
+            debuggable true
+            jniDebuggable true
+        }
+    }
+
+    sourceSets {
+        main {
+            manifest.srcFile 'AndroidManifest.xml'
+            java.srcDirs = ['src']
+            resources.srcDirs = ['src']
+            aidl.srcDirs = ['src']
+            renderscript.srcDirs = ['src']
+            res.srcDirs = ['res']
+            assets.srcDirs = ['assets']
+            jniLibs.srcDirs = ['libs']
+        }
+    }
+    android.sourceSets.main.java.exclude '**/Minecraft_Verizon.java'
+    lintOptions {
+        abortOnError false
+    }
+}
+
+repositories {
+    maven {
+        url 'https://maven.google.com'
+    }
+    mavenCentral()
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+}
