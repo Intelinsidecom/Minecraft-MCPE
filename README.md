@@ -1,4 +1,4 @@
-# Minecraft-MCPE-Alpha-0.6.1
+# Minecraft-MCPE
 
 This repo includes the leak files for MCPE 0.6.1 version. Im looking into adding more features to make it better and interesting to play. (ports, adjustments, fixes) 
 
