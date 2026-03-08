@@ -47,9 +47,8 @@ https://github.com/android/ndk/wiki/unsupported-downloads
 7. Run gradlew build to compile the apk and to package everything
 8. Sideload to whatewer device you want and run it
 
- - Notes for modern android users:
-  - The UI on big screens is going to be very small (change DPI if you really need), this is going to be fixed when UI overhaul from other secret minecraft leak later once all platforms build.
-
+Notes for modern android users:
+  - The UI on big screens is going to be small (change DPI if you really need), this is going to be fixed when UI overhaul is going to happen.
 
         
   
