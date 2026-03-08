@@ -4,7 +4,7 @@ This repo includes the leak files for MCPE 0.6.1 version. Im looking into adding
 
 # Todos
 - Build the project for all supported platforms and confirm they all work fine.
-  - [ ] Android
+  - [x] Android
   - [ ] IOS
   - [ ] Raspberry PI
   - [ ] Server
@@ -23,7 +23,6 @@ This repo includes the leak files for MCPE 0.6.1 version. Im looking into adding
 
 # Current bugs
 - Sound doesnt work on Win32.
-- Win32 should check if exists and mount from either from ../../data or just /data but the code doesnt even get ran? 
 
 # Building
 
