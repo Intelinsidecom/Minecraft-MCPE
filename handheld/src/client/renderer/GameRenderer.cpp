@@ -125,6 +125,7 @@ void GameRenderer::render(float a) {
 	TIMER_PUSH("mouse");
 	if (mc->player && mc->mouseGrabbed) {
         mc->mouseHandler.poll();
+		Mouse::reset2();
         //printf("Controller.x,y : %f,%f\n", Controller::getX(0), Controller::getY(0));
 
         float ss = mc->options.sensitivity * 0.6f + 0.2f;
@@ -692,7 +693,6 @@ void GameRenderer::pick(float a) {
         float rr = e->getPickRadius();
         AABB bb = e->bb.grow(rr, rr, rr);
         HitResult p = bb.clip(from, to);
-		//printf("Clip Hitresult %d (%d)\n", p.type, p.isHit());
 
         if (bb.contains(from)) {
             //@todo: hovered = e; break; ?
@@ -713,8 +713,7 @@ void GameRenderer::pick(float a) {
 		if(nearest < dist) {
 			mc->hitResult = HitResult(hovered);
 		}
-    }
-	else if (isPicking && !mc->hitResult.isHit()) {
+    } else if (isPicking && !mc->hitResult.isHit()) {
 		// if we don't have a hit result, attempt to hit the edge of the block we are standing on
 		// (this is an pocket edition simplification to help building floors)
         //LOGI("hovered : %d (%f)\n", mc->hitResult.type, viewVec.y);
@@ -748,8 +747,8 @@ void GameRenderer::tick(int nTick, int maxTick) {
 	if (--_shTicks == 0)
 		mc->hitResult.type = NO_HIT;
 
-	//_rotXlast = _rotX;
-	//_rotYlast = _rotY;
+	_rotXlast = _rotX;
+	_rotYlast = _rotY;
 
 	//LOGI("x: %f\n", _rotX);
 

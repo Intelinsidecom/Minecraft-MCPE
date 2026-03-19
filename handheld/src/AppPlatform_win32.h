@@ -27,7 +27,8 @@ class AppPlatform_win32: public AppPlatform
 public:
     AppPlatform_win32()
 	:	_hwnd(NULL),
-		_grabbed(false)
+		_grabbed(false),
+		_ignoreNextMove(false)
     {
     }
     
@@ -37,6 +38,9 @@ public:
 	virtual void grabMouse();
 	virtual void releaseMouse();
 	bool isMouseGrabbed() const { return _grabbed; }
+
+	bool shouldIgnoreNextMove() const { return _ignoreNextMove; }
+	void setIgnoreNextMove(bool ignore) { _ignoreNextMove = ignore; }
 
 	BinaryBlob readAssetFile(const std::string& filename) {
 		FILE* fp = NULL;
@@ -154,6 +158,7 @@ public:
 private:
 	HWND _hwnd;
 	bool _grabbed;
+	bool _ignoreNextMove;
 };
 
 #endif /*APPPLATFORM_WIN32_H__*/

@@ -879,10 +879,6 @@ void Minecraft::tickInput() {
 			#endif
 		}
 		#ifdef WIN32
-			if (key == Keyboard::KEY_M) {
-				for (int i = 0; i < 5 * SharedConstants::TicksPerSecond; ++i)
-					level->tick();
-			}
 		#endif
 
 
@@ -917,7 +913,7 @@ void Minecraft::tickInput() {
 	}
 
 	bool isTryingToDestroyBlock = (options.useMouseForDigging
-			?	(Mouse::isButtonDown(MouseAction::ACTION_LEFT) && mouseDiggable)
+			?	(Mouse::isButtonDown(MouseAction::ACTION_LEFT) && (mouseDiggable || hitResult.type == ENTITY))
 			:	Keyboard::isKeyDown(options.keyDestroy.key))
 		||	(buildHandled && bai.isRemove());
 
@@ -957,7 +953,9 @@ void Minecraft::handleMouseDown(int button, bool down) {
 	if(player->isSleeping()) {
 		return;
 	}
-    if (button == MouseAction::ACTION_LEFT && missTime > 0) return;
+    if (button == MouseAction::ACTION_LEFT && missTime > 0) {
+		return;
+	}
 	if (down && hitResult.type == TILE && button == MouseAction::ACTION_LEFT && !hitResult.indirectHit) {
         int x = hitResult.x;
         int y = hitResult.y;
@@ -965,6 +963,10 @@ void Minecraft::handleMouseDown(int button, bool down) {
         gameMode->continueDestroyBlock(x, y, z, hitResult.f);
         particleEngine->crack(x, y, z, hitResult.f);
 		player->swing();
+    } else if (down && hitResult.type == ENTITY && button == MouseAction::ACTION_LEFT) {
+		// Create attack action for entity
+		BuildActionIntention bai(BuildActionIntention::BAI_ATTACK);
+		handleBuildAction(&bai);
     } else {
         gameMode->stopDestroyBlock();
     }
@@ -1290,6 +1292,7 @@ void Minecraft::_reloadInput() {
 	if (level && player) {
 		player->input = inputHolder->getMoveInput();
 	}
+	Mouse::reset2();
 #endif
 }
 

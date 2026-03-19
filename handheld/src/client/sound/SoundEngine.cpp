@@ -148,7 +148,7 @@ void SoundEngine::init( Minecraft* mc, Options* options )
 
 void SoundEngine::enable( bool status )
 {
-#if defined(__APPLE__)
+#if defined(__APPLE__) || defined(_WIN32)
 	soundSystem.enable(status);
 #endif
 }
@@ -174,7 +174,7 @@ void SoundEngine::update( Mob* player, float a )
 	_yRot = player->yRotO + (player->yRot - player->yRotO) * a;
 
 	soundSystem.setListenerAngle(_yRot);
-	//soundSystem.setListenerPos(_x, _y, _z); //@note: not used, since we translate all sounds to Player space
+	soundSystem.setListenerPos(_x, _y, _z);
 }
 
 float SoundEngine::_getVolumeMult( float x, float y, float z )
@@ -201,7 +201,7 @@ void SoundEngine::playUI(const std::string& name, float volume, float pitch) {
 	//volume *= 2.0f;
 	mc->platform()->playSound(name, volume, pitch);
 }
-#elif defined(__APPLE__)
+#elif defined(__APPLE__) || defined(_WIN32)
 void SoundEngine::play(const std::string& name, float x, float y, float z, float volume, float pitch) {
 	if ((volume *= options->sound) <= 0) return;
 

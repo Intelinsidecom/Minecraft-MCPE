@@ -19,8 +19,16 @@ bool AppPlatform_win32::hasBuyButtonWhenInvalidLicense() { return true; }
 void AppPlatform_win32::grabMouse() {
 	if (!_hwnd || _grabbed) return;
 	_grabbed = true;
+	_ignoreNextMove = true;
 	ShowCursor(FALSE);
 	RECT rect;
+	GetClientRect(_hwnd, &rect);
+	int centerX = (rect.right - rect.left) / 2;
+	int centerY = (rect.bottom - rect.top) / 2;
+	POINT pt = { centerX, centerY };
+	ClientToScreen(_hwnd, &pt);
+	SetCursorPos(pt.x, pt.y);
+
 	GetClientRect(_hwnd, &rect);
 	ClientToScreen(_hwnd, (LPPOINT)&rect.left);
 	ClientToScreen(_hwnd, (LPPOINT)&rect.right);

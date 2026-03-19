@@ -85,6 +85,17 @@ LRESULT WINAPI windowProc ( HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam )
 		if (wParam == 33) toggleResolutions(hWnd, -1);
 		if (wParam == 34) toggleResolutions(hWnd, +1);
 		
+		if (wParam == 'M') {
+			if (g_app) {
+				if (((Minecraft*)g_app)->mouseGrabbed) {
+					((Minecraft*)g_app)->releaseMouse();
+				} else {
+					((Minecraft*)g_app)->grabMouse();
+				}
+			}
+			return 0;
+		}
+		
 		//if (wParam == 'Q') ((Minecraft*)g_app)->leaveGame();
 		Keyboard::feed((unsigned char) wParam, 1); //(unsigned char) getBits(lParam, 16, 23, 1)
 
@@ -126,6 +137,10 @@ LRESULT WINAPI windowProc ( HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam )
 		int y = GET_Y_LPARAM(lParam);
 		AppPlatform_win32* plat = (AppPlatform_win32*)g_app->platform();
 		if (plat && plat->isMouseGrabbed()) {
+			if (plat->shouldIgnoreNextMove()) {
+				plat->setIgnoreNextMove(false);
+				break;
+			}
 			RECT rect;
 			GetClientRect(hWnd, &rect);
 			int centerX = (rect.right - rect.left) / 2;
@@ -136,11 +151,18 @@ LRESULT WINAPI windowProc ( HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam )
 				Mouse::feed(MouseAction::ACTION_MOVE, 0, (short)x, (short)y, (short)dx, (short)dy);
 				POINT pt = { centerX, centerY };
 				ClientToScreen(hWnd, &pt);
+				plat->setIgnoreNextMove(true);
 				SetCursorPos(pt.x, pt.y);
 			}
 		} else {
 			Mouse::feed( MouseAction::ACTION_MOVE, 0, (short)x, (short)y);
 			Multitouch::feed(0, 0, (short)x, (short)y, 0);
+		}
+		break;
+	}
+	case WM_ACTIVATE: {
+		if (LOWORD(wParam) == WA_INACTIVE) {
+			if (g_app) ((Minecraft*)g_app)->pauseGame(false);
 		}
 		break;
 	}
@@ -330,6 +352,7 @@ int main(int numArguments, char* pszArgs[]) {
 
 #ifndef STANDALONE_SERVER
 int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE, LPSTR, int nCmdShow) {
+	SetProcessDPIAware();
 	AppContext appContext;
 	MSG sMessage;
 

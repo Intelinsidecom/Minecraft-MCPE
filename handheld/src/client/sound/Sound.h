@@ -9,7 +9,7 @@ class SoundDesc
 {
 public:
 	SoundDesc()
-	:	buffer(0)
+	:	buffer(0), shouldDelete(false)
 	{}
 
     SoundDesc(char* data, int size, int channels, int width, int rate)
@@ -18,13 +18,15 @@ public:
         size(size),
         channels(channels),
         byteWidth(width),
-        frameRate(rate)
+        frameRate(rate),
+        shouldDelete(true)
     {
         numFrames = size / (channels * byteWidth);
     }
 
 	SoundDesc(char* data)
-	:	buffer(data)
+	:	buffer(data),
+		shouldDelete(false)
 	{
 		// header [INT][Channels, BytePerSample, FrameRate, NumFrames]
 		channels  = *((int*)&data[0]);
@@ -42,13 +44,17 @@ public:
     }
 
     void destroy() const {
-        if (isValid()) {
-            delete buffer;
+        if (isValid() && shouldDelete) {
+            delete[] buffer;
             buffer = 0;
+            frames = 0;
+        } else if (isValid()) {
+            buffer = 0;
+            frames = 0;
         }
     }
     
-	char* frames;
+	mutable char* frames;
     int size;
 
 	int channels;
@@ -59,6 +65,7 @@ public:
     std::string name;
 private:
 	mutable char* buffer;
+	bool shouldDelete;
 };
 
 #if !defined(PRE_ANDROID23) && !defined(__APPLE__) && !defined(RPI)

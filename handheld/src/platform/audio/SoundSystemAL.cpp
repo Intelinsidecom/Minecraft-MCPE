@@ -46,16 +46,26 @@ SoundSystemAL::SoundSystemAL()
 
 SoundSystemAL::~SoundSystemAL()
 {
-    alDeleteSources(MaxNumSources, _sources);
+    if (device && context) {
+        alDeleteSources(MaxNumSources, _sources);
+        
+        for (int i = 0; i < (int)_buffers.size(); ++i) {
+            if (_buffers[i].inited) {
+                alDeleteBuffers(1, &_buffers[i].bufferID);
+            }
+        }
+    }
 
-    for (int i = 0; i < (int)_buffers.size(); ++i)
-        if (_buffers[i].inited) alDeleteBuffers(1, &_buffers[i].bufferID);
-
-    alcMakeContextCurrent(NULL);
-	alcDestroyContext(context);
+    if (context) {
+        alcMakeContextCurrent(NULL);
+        alcDestroyContext(context);
+        context = NULL;
+    }
 	
-	// Close the device
-	alcCloseDevice(device);
+    if (device) {
+        alcCloseDevice(device);
+        device = NULL;
+    }
 }
 
 void SoundSystemAL::init()
@@ -63,34 +73,53 @@ void SoundSystemAL::init()
 	device = alcOpenDevice(NULL);
 	if(device) {
 		context = alcCreateContext(device, NULL);
-		alcMakeContextCurrent(context);
-        
-        alDistanceModel(AL_LINEAR_DISTANCE_CLAMPED);
-        
-        alGenSources(MaxNumSources, _sources);
-		for(int index = 0; index < MaxNumSources; index++) {
-            ALuint sourceID = _sources[index];
-            
-            alSourcef(sourceID, AL_REFERENCE_DISTANCE, 5.0f);
-            alSourcef(sourceID, AL_MAX_DISTANCE, 16.0f);
-            alSourcef(sourceID, AL_ROLLOFF_FACTOR, 6.0f);
+		if(context) {
+			alcMakeContextCurrent(context);
+			
+			if(alcGetCurrentContext() == context) {
+				alDistanceModel(AL_LINEAR_DISTANCE_CLAMPED);
+				
+				alGenSources(MaxNumSources, _sources);
+				
+				ALenum error = alGetError();
+				if(error == AL_NO_ERROR) {
+					for(int index = 0; index < MaxNumSources; index++) {
+						ALuint sourceID = _sources[index];
+						
+						alSourcef(sourceID, AL_REFERENCE_DISTANCE, 5.0f);
+						alSourcef(sourceID, AL_MAX_DISTANCE, 16.0f);
+						alSourcef(sourceID, AL_ROLLOFF_FACTOR, 6.0f);
+					}
+					
+					float listenerPos[] = {0, 0, 0};
+					float listenerOri[] = {0.0, 1.0, 0.0, 0.0, 0.0, 1.0};
+					float listenerVel[] = {0, 0, 0};
+					alListenerfv(AL_POSITION, listenerPos);
+					alListenerfv(AL_ORIENTATION, listenerOri);
+					alListenerfv(AL_VELOCITY, listenerVel);
+					
+					errIdString = "Init audio";
+					checkError();
+					return;
+				}
+			}
 		}
-        
-		float listenerPos[] = {0, 0, 0};
-		float listenerOri[] = {0.0, 1.0, 0.0, 0.0, 0.0, 1.0};
-		float listenerVel[] = {0, 0, 0};
-		alListenerfv(AL_POSITION, listenerPos);
-		alListenerfv(AL_ORIENTATION, listenerOri);
-		alListenerfv(AL_VELOCITY, listenerVel);
-        
-        errIdString = "Init audio";
-        checkError();
+	}
+	
+	available = false;
+	if(context) {
+		alcDestroyContext(context);
+		context = NULL;
+	}
+	if(device) {
+		alcCloseDevice(device);
+		device = NULL;
 	}
 }
 
 void SoundSystemAL::enable(bool status) {
     LOGI("Enabling? audio: %d (context %p)\n", status, context);
-    if (status) {
+    if (status && context) {
         alcMakeContextCurrent(context);
         errIdString = "Enable audio";
     }
@@ -106,20 +135,10 @@ void SoundSystemAL::destroy() {}
 
 void SoundSystemAL::setListenerPos( float x, float y, float z )
 {
-    // Note: listener position is thought to be 0,0,0 now
-    
-    /*
     if (_listenerPos.x != x || _listenerPos.y != y || _listenerPos.z != z) {
         _listenerPos.set(x, y, z);
-        alListener3f(AL_POSITION, x, y, z);
-        
-        static int _n = 0;
-        if (++_n == 20) {
-            _n = 0;
-            LOGI("Setting position for listener: %f, %f, %f\n", _listenerPos.x, _listenerPos.y, _listenerPos.z);
-        }
+        alListener3f(AL_POSITION, 0, 0, 0);
     }
-  */
 }
 
 void SoundSystemAL::setListenerAngle( float deg )
